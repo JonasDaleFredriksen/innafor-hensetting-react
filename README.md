@@ -1,6 +1,6 @@
 # Innafor 2023 - Hensetting - React frontend
 
-Dette prosjektet er ment som et mulig utgangspunkt for frontend i utviklingen av en prototype til den tekniske delen av oppgaven i Innafor 2023
+Dette prosjektet er ment som et mulig utgangspunkt for frontend i utviklingen av en prototype til den tekniske delen av oppgaven i Innafor 2023. Prosjektet bruker TypeScript som språk, React for rendering, react-router-dom for routing, react-query for behandling av data til og fra backend, eslint for linting og vite for transpilering, bundling, dev-server osv.
 
 ## Formål
 
