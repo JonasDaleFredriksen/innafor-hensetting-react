@@ -62,6 +62,13 @@ export async function createReservation(reservation: ReservationCreationDto) {
   return apiPost<Reservation>("reservations", reservation);
 }
 
+export async function getReservationsOverviewVy() {
+  const reservationVy = await apiGet<ReservationOverviewDto[]>("reservations");
+  const filteredReservations = reservationVy.filter(res => res.reserver.includes("Vy vest")); 
+  return filteredReservations;
+}
+
+
 export interface Location {
   id: string;
   status: string;

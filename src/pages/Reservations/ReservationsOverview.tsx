@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import {
   ReservationOverviewDto,
   getReservationsOverview,
+  getReservationsOverviewVy,
   getSpaceReservations,
 } from "../../api";
 import Loader from "../../components/Loader";
@@ -45,7 +46,7 @@ export default function ReservationsOverview() {
     : ["reservations"];
   const query = spaceId
     ? () => getSpaceReservations(spaceId)
-    : getReservationsOverview;
+    : getReservationsOverviewVy;
   const reservationsQuery = useQuery(queryKey, query);
 
   if (reservationsQuery.isLoading) return <Loader />;
@@ -59,6 +60,8 @@ export default function ReservationsOverview() {
   return (
     <>
       <h1>Reservasjoner</h1>
+      <input type="text" placeholder="Filtrer på noe her"></input>
+      <button>Filtrer</button>
       <SimpleTable
         columns={reservationOverviewColumns}
         rows={reservationsQuery.data}
