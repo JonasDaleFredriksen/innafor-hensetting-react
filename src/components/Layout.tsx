@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Link,NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "/logo.svg";
 import "./Layout.css";
 
@@ -12,10 +12,18 @@ export default function Layout(props: { children: ReactNode }) {
             <img src={logo} className="logo" alt="Logo" />
           </Link>
           <div>
-                <NavLink to="/locations" className="links">Lokasjoner</NavLink>
-                <NavLink to="/spaces" className="links">Hensettingsplasser</NavLink>
-                <NavLink to="/reservations" className="links">Reservasjoner</NavLink>
-                <NavLink to="/reservations/create" className="links">Reserver</NavLink>
+            <NavLink to="/locations" className="links">
+              Lokasjoner
+            </NavLink>
+            <NavLink to="/spaces" className="links">
+              Hensettingsplasser
+            </NavLink>
+            <NavLink to="/reservations" className="links">
+              Reservasjoner
+            </NavLink>
+            <NavLink to="/reservations/create" className="links">
+              Reserver
+            </NavLink>
           </div>
           <p id="velkommen">Logget inn som: Vy Vest</p>
         </div>

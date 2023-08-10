@@ -63,11 +63,12 @@ export async function createReservation(reservation: ReservationCreationDto) {
 }
 
 export async function getReservationsOverviewVy() {
-  const reservationVy = await apiGet<ReservationOverviewDto[]>("reservations");
-  const filteredReservations = reservationVy.filter(res => res.reserver.includes("Vy vest")); 
-  return filteredReservations;
+  const reservations = await apiGet<ReservationOverviewDto[]>("reservations");
+  const vyReservations = reservations
+    .filter((res) => res.reserver.includes("Vy vest"))
+    .slice(-10);
+  return vyReservations;
 }
-
 
 export interface Location {
   id: string;
