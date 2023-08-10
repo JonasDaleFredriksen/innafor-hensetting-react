@@ -1,18 +1,24 @@
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 import logo from "/logo.svg";
+import "./Layout.css";
 
 export default function Layout(props: { children: ReactNode }) {
   return (
     <>
-      <nav>
-        <Link to="/">
-          <img src={logo} className="logo" alt="Logo" />
-        </Link>
-        <Link to="/locations">Lokasjoner</Link>
-        <Link to="/spaces">Hensettingsplasser</Link>
-        <Link to="/reservations">Reservasjoner</Link>
-        <Link to="/reservations/create">Reserver</Link>
+      <nav id="navbar">
+        <div id="container">
+          <Link to="/">
+            <img src={logo} className="logo" alt="Logo" />
+          </Link>
+          <div>
+                <NavLink to="/locations" className="links">Lokasjoner</NavLink>
+                <NavLink to="/spaces" className="links">Hensettingsplasser</NavLink>
+                <NavLink to="/reservations" className="links">Reservasjoner</NavLink>
+                <NavLink to="/reservations/create" className="links">Reserver</NavLink>
+          </div>
+          <p id="velkommen">Logget inn som: Vy Vest</p>
+        </div>
       </nav>
       {props.children}
     </>

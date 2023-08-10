@@ -60,8 +60,6 @@ export default function ReservationsOverview() {
   return (
     <>
       <h1>Reservasjoner</h1>
-      <input type="text" placeholder="Filtrer på noe her"></input>
-      <button>Filtrer</button>
       <SimpleTable
         columns={reservationOverviewColumns}
         rows={reservationsQuery.data}

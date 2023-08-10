@@ -1,0 +1,24 @@
+#container {
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  #navbar {
+    height: 60px;
+    background-color: #fef7e5;
+    position: relative;
+  }
+
+  .links {
+    text-decoration: none;
+    padding-right: 14px;
+    color: black;
+  }
+
+  .links:hover,:focus {
+    text-decoration: underline;
+}
