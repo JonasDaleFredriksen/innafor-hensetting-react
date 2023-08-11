@@ -67,7 +67,8 @@ export async function getReservationsOverviewVy() {
   const vyReservations = reservations
     .filter((res) => res.reserver.includes("Vy vest"))
     .slice(-10);
-  return vyReservations;
+  const reversedVyReservations = [...vyReservations].reverse();
+  return reversedVyReservations;
 }
 
 export interface Location {

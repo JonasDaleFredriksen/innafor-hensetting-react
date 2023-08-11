@@ -102,7 +102,7 @@ const ReservationCreation = () => {
             onClick={() => navigate("/reservations/reservationResult")}
             className="submitButton"
           >
-            Bestill
+            Sjekk tilgjengelighet
           </button>
         </form>
       }

@@ -19,8 +19,8 @@ const PendingSuccessFailedComponent = () => {
   useEffect(() => {
     // Show the "pending" state for 5 seconds
     const timeoutId = setTimeout(() => {
-      // After 5 seconds, determine success or failure with a 50% probability
-      const isSuccess = Math.random() < 0.5;
+      // After 3 seconds, determine success or failure with a 60% probability
+      const isSuccess = Math.random() < 0.6;
 
       if (isSuccess) {
         setStatus("success");
@@ -47,7 +47,9 @@ const PendingSuccessFailedComponent = () => {
   };
 
   return (
-    <div style={style}>{status === "pending" ? "Pending..." : message}</div>
+    <div style={style}>
+      {status === "pending" ? "Våre algoritmer jobber..." : message}
+    </div>
   );
 };
 
