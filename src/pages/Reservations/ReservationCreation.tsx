@@ -4,25 +4,9 @@ const ReservationCreation = () => {
   const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        background: "#f0f0f0",
-      }}
-    >
+    <div className="reservationCreationView">
       {
-        <form
-          style={{
-            width: "400px",
-            background: "#fff",
-            padding: "30px 50px 30px 30px",
-            borderRadius: "10px",
-            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-          }}
-        >
+        <form className="reservationForm">
           <h1 style={{ marginBottom: "20px", textAlign: "center" }}>
             Ny bestilling
           </h1>
@@ -37,12 +21,7 @@ const ReservationCreation = () => {
               type="text"
               id="endestasjon"
               name="endestasjon"
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-              }}
+              className="input"
             />
           </div>
           <div style={{ marginBottom: "15px" }}>
@@ -52,17 +31,7 @@ const ReservationCreation = () => {
             >
               Ankomst:
             </label>
-            <input
-              type="text"
-              id="Ankomst"
-              name="Ankomst"
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-              }}
-            />
+            <input type="text" id="Ankomst" name="Ankomst" className="input" />
           </div>
           <div style={{ marginBottom: "15px" }}>
             <label
@@ -71,17 +40,7 @@ const ReservationCreation = () => {
             >
               Avreise:
             </label>
-            <input
-              type="text"
-              id="avreise"
-              name="avreise"
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-              }}
-            />
+            <input type="text" id="avreise" name="avreise" className="input" />
           </div>
           <div style={{ marginBottom: "15px" }}>
             <label
@@ -90,35 +49,20 @@ const ReservationCreation = () => {
             >
               Togid:
             </label>
-            <input
-              type="text"
-              id="togid"
-              name="togid"
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-              }}
-            />
+            <input type="text" id="togid" name="togid" className="input" />
           </div>
           <div style={{ marginBottom: "15px" }}>
             <label
               htmlFor="tognummer"
               style={{ display: "block", marginBottom: "5px" }}
             >
-              Tognummer
+              Tognummer:
             </label>
             <input
               type="text"
               id="tognummer"
               name="tognummer"
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-              }}
+              className="input"
             />
           </div>
           <div style={{ marginBottom: "15px" }}>
@@ -132,12 +76,7 @@ const ReservationCreation = () => {
               type="text"
               id="toglengde"
               name="toglengde"
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-              }}
+              className="input"
             />
           </div>
 
@@ -161,14 +100,7 @@ const ReservationCreation = () => {
           <button
             type="submit"
             onClick={() => navigate("/reservations/reservationResult")}
-            style={{
-              padding: "10px 20px",
-              borderRadius: "5px",
-              background: "#007bff",
-              color: "#fff",
-              border: "none",
-              cursor: "pointer",
-            }}
+            className="submitButton"
           >
             Bestill
           </button>

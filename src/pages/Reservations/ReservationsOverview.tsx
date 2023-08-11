@@ -8,7 +8,7 @@ import Loader from "../../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
 import dayjs from "dayjs";
 import "./Reservation.css";
-import plus from "./plus.svg";
+import plus from "/plus.svg";
 
 export default function ReservationsOverview() {
   const { spaceId } = useParams<{ spaceId: string }>();

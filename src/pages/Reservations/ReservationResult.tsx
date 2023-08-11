@@ -20,7 +20,7 @@ const PendingSuccessFailedComponent = () => {
     // Show the "pending" state for 5 seconds
     const timeoutId = setTimeout(() => {
       // After 5 seconds, determine success or failure with a 50% probability
-      const isSuccess = Math.random() < 0.99;
+      const isSuccess = Math.random() < 0.5;
 
       if (isSuccess) {
         setStatus("success");

@@ -53,3 +53,34 @@ p {
     padding-top: 8px;
     font-weight: 500;
 }
+
+.reservationCreationView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+.reservationForm {
+    width: 400px;
+    background: #fff;
+    padding: 30px 50px 30px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0 0 0 / 10%);
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc
+}
+
+.submitButton {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: #3C3CC8;
+    color: #fff;
+    border: none;
+}
