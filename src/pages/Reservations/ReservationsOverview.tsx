@@ -8,6 +8,8 @@ import {
 import Loader from "../../components/Loader";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import dayjs from "dayjs";
+import plus from "./plus.svg"
+
 
 export default function ReservationsOverview() {
   const { spaceId } = useParams<{ spaceId: string }>();
@@ -36,21 +38,28 @@ export default function ReservationsOverview() {
         style={{
           display: "flex",
           flexFlow: "wrap",
-          gap: "48px",
+          gap: "16px",
           justifyContent: "center",
         }}
       >
         <div
           style={{
             width: "300px",
-            background: "white",
+            background: "#3C3CC8",
             height: "150px",
             borderRadius: "16px",
             boxShadow: "0 8px 24px rgba(0 0 0 / 15%)",
+            display:"flex",
             justifyContent: "center",
+            alignItems: "center",
           }}
-        >
-          PLUUUUUUSS
+        ><Link to="/reservations/create">
+          <img  src={plus} alt="fireSpot" style={{
+            boxShadow: '1px 1px 1px #3C3CC8',
+            borderRadius: '50%',
+            }}
+            />
+          </Link>
         </div>
         {reservationsQuery.data.map(
           (reservation: ReservationOverviewDto, index: number) => {
@@ -61,18 +70,20 @@ export default function ReservationsOverview() {
                   background: "white",
                   height: "150px",
                   borderRadius: "16px",
+                  borderColor: "#3C3CC8",
+                  borderStyle: "solid",
                   boxShadow: "0 8px 24px rgba(0 0 0 / 15%)",
                   justifyContent: "center",
                 }}
                 onClick={() => navigate(`/reservations/${reservation.id}`)}
               >
-                <p>{reservation.reserver + (index + 1).toString()}</p>
+                <p style={{fontSize: 20}}><strong>{reservation.reserver + (index + 1).toString()}</strong></p>
                 <p>
                   {dayjs(reservation.startTime).format("D. MMM")}-
                   {dayjs(reservation.endTime).format("D. MMM")}
                 </p>
                 <p>Ankomst: {reservation.startTime.toString().slice(11, 16)}</p>
-                <p>Lodalen</p>
+                <p><strong>Lodalen</strong></p>
               </div>
             );
           }
