@@ -11,7 +11,6 @@ import SpacesOverview from "./pages/Spaces/SpacesOverview";
 import SpaceView from "./pages/Spaces/SpaceView";
 import ReservationView from "./pages/Reservations/ReservationView";
 import ReservationCreation from "./pages/Reservations/ReservationCreation";
-import ReservationCreationTest from "./pages/Reservations/ReservationCreationTest";
 import ReservationResult from "./pages/Reservations/ReservationResult";
 
 const queryClient = new QueryClient({
@@ -65,14 +64,14 @@ const router = createBrowserRouter([
       },
       {
         path: "reservations/create",
-        element: <ReservationCreationTest />,
+        element: <ReservationCreation />,
       },
       {
         path: "reservations/:id",
         element: <ReservationView />,
       },
 
-            {
+      {
         path: "reservations/reservationResult",
         element: <ReservationResult />,
       },

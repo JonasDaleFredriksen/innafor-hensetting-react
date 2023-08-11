@@ -104,8 +104,8 @@ export interface ReservationOverviewDto {
 export interface ReservationCreationDto {
   spaceId: number;
   reserver: string;
-  startTime: string;
-  endTime: string;
+  startTime: Date;
+  endTime: Date;
   notes: string;
 }
 export interface Space {

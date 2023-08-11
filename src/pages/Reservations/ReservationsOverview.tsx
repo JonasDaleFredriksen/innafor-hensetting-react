@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import {
   ReservationOverviewDto,
-  getReservationsOverview,
   getReservationsOverviewVy,
   getSpaceReservations,
 } from "../../api";
 import Loader from "../../components/Loader";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import dayjs from "dayjs";
+import "./Reservation.css";
 
 export default function ReservationsOverview() {
   const { spaceId } = useParams<{ spaceId: string }>();
@@ -30,54 +30,41 @@ export default function ReservationsOverview() {
     );
 
   return (
-    <>
-      <h1>Reservasjoner</h1>
-      <div
-        style={{
-          display: "flex",
-          flexFlow: "wrap",
-          gap: "48px",
-          justifyContent: "center",
-        }}
-      >
-        <div
-          style={{
-            width: "300px",
-            background: "white",
-            height: "150px",
-            borderRadius: "16px",
-            boxShadow: "0 8px 24px rgba(0 0 0 / 15%)",
-            justifyContent: "center",
-          }}
-        >
-          PLUUUUUUSS
-        </div>
-        {reservationsQuery.data.map(
-          (reservation: ReservationOverviewDto, index: number) => {
-            return (
-              <div
-                style={{
-                  width: "300px",
-                  background: "white",
-                  height: "150px",
-                  borderRadius: "16px",
-                  boxShadow: "0 8px 24px rgba(0 0 0 / 15%)",
-                  justifyContent: "center",
-                }}
-                onClick={() => navigate(`/reservations/${reservation.id}`)}
-              >
-                <p>{reservation.reserver + (index + 1).toString()}</p>
-                <p>
-                  {dayjs(reservation.startTime).format("D. MMM")}-
-                  {dayjs(reservation.endTime).format("D. MMM")}
-                </p>
-                <p>Ankomst: {reservation.startTime.toString().slice(11, 16)}</p>
-                <p>Lodalen</p>
-              </div>
-            );
-          }
-        )}
+    <div className="reservationOverview">
+      <div className="box" onClick={() => navigate("/reservations/create")}>
+        PLUUUUUUSS
       </div>
-    </>
+      {reservationsQuery.data.map(
+        (reservation: ReservationOverviewDto, index: number) => {
+          return (
+            <div
+              key={index}
+              className="box detailBox"
+              onClick={() => navigate(`/reservations/${reservation.id}`)}
+            >
+              <div>
+                <p className="reserverText">
+                  <strong>
+                    {reservation.reserver.toUpperCase() +
+                      (index + 1).toString()}
+                  </strong>
+                </p>
+                <div className="timeTexts">
+                  <p>
+                    {dayjs(reservation.startTime).format("D. MMM")}-
+                    {dayjs(reservation.endTime).format("D. MMM")}
+                  </p>
+                  <p>
+                    Ankomst: {reservation.startTime.toString().slice(11, 16)}
+                  </p>
+                </div>
+                <p className="locationText">Lodalen</p>
+              </div>
+              <div></div>
+            </div>
+          );
+        }
+      )}
+    </div>
   );
 }

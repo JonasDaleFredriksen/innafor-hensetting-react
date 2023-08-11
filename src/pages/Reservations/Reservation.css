@@ -1,0 +1,43 @@
+.reservationOverview {
+    display: flex;
+    flex-flow: wrap;
+    gap: 48px;
+    justify-content: center;
+    padding-top: 24px;
+}
+
+.box {
+    width: 300px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0 0 0 / 15%);
+    padding: 24px;
+}
+
+.detailBox {
+    display: flex;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.reserverText {
+    padding-top: 16px;
+    font-size: 20px;
+}
+
+.timeTexts {
+    padding-top: 4px;
+}
+
+
+.timeTexts p {
+    color: #808080
+}
+
+.locationText {
+    padding-top: 8px;
+    font-weight: 500;
+}

@@ -10,7 +10,7 @@ const PendingSuccessFailedComponent = () => {
 
   const reservation = {
     spaceId: 729,
-    reserver: "Vy vest 2",
+    reserver: "Vy vest",
     startTime: new Date(),
     endTime: new Date(),
     notes: "",
