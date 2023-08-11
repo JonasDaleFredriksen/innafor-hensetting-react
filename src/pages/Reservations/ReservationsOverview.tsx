@@ -8,6 +8,7 @@ import Loader from "../../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
 import dayjs from "dayjs";
 import "./Reservation.css";
+import plus from "./plus.svg";
 
 export default function ReservationsOverview() {
   const { spaceId } = useParams<{ spaceId: string }>();
@@ -31,8 +32,13 @@ export default function ReservationsOverview() {
 
   return (
     <div className="reservationOverview">
-      <div className="box" onClick={() => navigate("/reservations/create")}>
-        PLUUUUUUSS
+      <div
+        onClick={() => {
+          navigate("/reservations/create");
+        }}
+        className="box addBox"
+      >
+        <img className="plusIcon" src={plus} alt="fireSpot" />
       </div>
       {reservationsQuery.data.map(
         (reservation: ReservationOverviewDto, index: number) => {

@@ -6,6 +6,18 @@
     padding-top: 24px;
 }
 
+.addBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3C3CC8 !important;
+}
+
+.plusIcon {
+    box-shadow: 1px 1px 1px  #3C3CC8;
+    border-radius: 50%;
+}
+
 .box {
     width: 300px;
     background: white;
