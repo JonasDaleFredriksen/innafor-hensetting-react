@@ -12,12 +12,6 @@ export default function Layout(props: { children: ReactNode }) {
             <img src={logo} className="logo" alt="Logo" />
           </Link>
           <div>
-            <NavLink to="/locations" className="links">
-              Lokasjoner
-            </NavLink>
-            <NavLink to="/spaces" className="links">
-              Hensettingsplasser
-            </NavLink>
             <NavLink to="/reservations" className="links">
               Reservasjoner
             </NavLink>

@@ -9,16 +9,20 @@
 
   #navbar {
     height: 60px;
-    background-color: #fef7e5;
+    background-color: #1E2869;
     position: relative;
   }
 
   .links {
     text-decoration: none;
     padding-right: 14px;
-    color: black;
+    color: white;
   }
 
   .links:hover,:focus {
     text-decoration: underline;
+}
+
+#velkommen {
+  color: white;
 }
